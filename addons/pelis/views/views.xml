@@ -1,0 +1,113 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="pelis.list">
+      <field name="name">Lista de Pelis</field>
+      <field name="model">pelis.pelis</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="titulo"/>
+          <field name="value"/>
+          <field name="valoracion"/>
+        </tree>
+     
+      
+      </field>
+    </record>
+   
+    <record   model="ir.ui.view" id="pelis.form">
+      <field name="name">Formulario de Pelis</field>
+      <field name="model">pelis.pelis</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+             <field name="titulo"/>
+              <field name="name"/>
+             
+              <field name="value"/>
+              <field name="valoracion"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+    <record model="ir.ui.view" id="pelis.kanban">
+      <field name="name">Kanban de Pelis</field>
+      <field name="model">pelis.pelis</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name"/>
+          <field name="titulo"/>
+          <field name="value"/>
+          <field name="valoracion"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_details">
+                  <div class="oe_kanban_details_section">
+                    <strong><field name="name"/></strong>
+                  </div>
+                  <div class="oe_kanban_details_section">
+                   <h2> <field name="titulo"/></h2>
+                  </div>
+                  <div class="oe_kanban_details_section">
+                    <field name="value"/>
+                  </div>
+                  <div class="oe_kanban_details_section">
+                    <field name="valoracion"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="pelis.action_window">
+      <field name="name">pelis</field>
+      <field name="res_model">pelis.pelis</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+   
+
+    <!-- server action to the one above -->
+    
+    <record model="ir.actions.server" id="pelis.action_server">
+      <field name="name">pelis server</field>
+      <field name="model_id" ref="model_pelis_pelis"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+   
+
+    <!-- Top menu item -->
+    
+    <menuitem name="pelis" id="pelis.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Menu pelis" id="pelis.menu_1" parent="pelis.menu_root"/>
+    <menuitem name="Menu pelis2" id="pelis.menu_2" parent="pelis.menu_root"/>
+   
+    <!-- actions -->
+    
+    <menuitem name="List" id="pelis.menu_1_list" parent="pelis.menu_1"
+              action="pelis.action_window"/>
+    <menuitem name="Server to list" id="pelis" parent="pelis.menu_2"
+              action="pelis.action_server"/>
+   
+  </data>
+</odoo>
