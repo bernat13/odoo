@@ -28,10 +28,10 @@
         'views/templates.xml',
     ],
     'assets': {
-        'web.assets_backend': [
+         'web.assets_common': [
             'pelis/static/src/scss/pelis.scss',
             'pelis/static/src/js/pelis.js',
-            ]
+            ],
             
     },
     # only loaded in demonstration mode

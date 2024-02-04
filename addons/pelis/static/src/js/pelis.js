@@ -1,10 +1,30 @@
- 
-    // fichero para añadir el código javascript que necesitemos
-    // en este caso, añadimos un evento click a un botón
-    // que al pulsarlo, muestra un mensaje en la consola del navegador
-    // y un mensaje en un alert
-    $(document).ready(function() {
-        $('#button').click(function() {
-            console.log('Button clicked');
+
+// fichero para añadir el código javascript que necesitemos
+// vamos a hacer lo necesario para que aparezca un console.log en la consola del navegador
+// cuando se cargue la página
+console.log('Hola desde Pelissss');
+
+// mostrar un mensaje cuando la pagina se ha cargado 
+$(document).ready(function () {
+
+
+    console.log('La página se ha cargadosss');
+
+    var car = document.querySelector('.cartelera');
+    console.log('car', car);
+    if (car != null) {
+        car.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('Has hecho click', e);
         });
-    });
+    }
+});
+
+
+
+
+
+
+
+
+

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pelis_pelis,pelis.pelis,model_pelis_pelis,,1,1,1,0
+access_pelis_pelis,pelis.pelis,model_pelis_pelis,,1,1,1,1
+access_pelis_genero,pelis.genero,model_pelis_genero,,1,1,1,1
+access_pelis_actores,pelis.actores,model_pelis_actores,,1,1,1,1

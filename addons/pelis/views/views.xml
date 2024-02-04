@@ -23,16 +23,21 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <img src="pelis/static/src/img/cartelera.jpeg" />
+            <img src="pelis/static/src/img/cartelera.jpeg" class="cartelera"/>
             <group class="hola">
              <field name="titulo"/>
               <field name="name"/>
-             
               <field name="value"/>
-              <field name="valoracion"/>
+              <field name="valoracion"/>  
+              <field name="tipo"/>
             </group>
             <group class="hola">
-              <field name="description"/> 
+                  <field name="description"/> 
+                  <field name="actores"/>
+            </group>
+
+                 <group class="hola">
+                  <field name="genero"/> 
             </group>
           </sheet>
         </form>
@@ -75,13 +80,24 @@
     </record>
     <!-- actions opening views on models -->
     
-    <record model="ir.actions.act_window" id="pelis.action_window">
+    <record model="ir.actions.act_window" id="pelis.pelis_action_window">
       <field name="name">pelis</field>
       <field name="res_model">pelis.pelis</field>
       <field name="view_mode">tree,form,kanban</field>
     </record>
+
+        <record model="ir.actions.act_window" id="pelis.genero_action_window">
+      <field name="name">genero</field>
+      <field name="res_model">pelis.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
    
 
+        <record model="ir.actions.act_window" id="pelis.actores_action_window">
+      <field name="name">Actores</field>
+      <field name="res_model">pelis.actores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
     <!-- server action to the one above -->
     
     <record model="ir.actions.server" id="pelis.action_server">
@@ -104,15 +120,16 @@
    
     <!-- menu categories -->
     
-    <menuitem name="Menu pelis" id="pelis.menu_1" parent="pelis.menu_root"/>
-    <menuitem name="Menu pelis2" id="pelis.menu_2" parent="pelis.menu_root"/>
+    <menuitem name="Menu" id="pelis.menu_1" parent="pelis.menu_root"/>
    
     <!-- actions -->
     
-    <menuitem name="List" id="pelis.menu_1_list" parent="pelis.menu_1"
-              action="pelis.action_window"/>
-    <menuitem name="Server to list" id="pelis" parent="pelis.menu_2"
-              action="pelis.action_server"/>
-   
+    <menuitem name="Pelis" id="pelis.menu_1_list" parent="pelis.menu_1"
+              action="pelis.pelis_action_window"/>
+
+      <menuitem name="Generos" id="pelis.genero_menu_1_list" parent="pelis.menu_1"
+            action="pelis.genero_action_window"/>
+                 <menuitem name="Actores" id="pelis.actores_menu_1_list" parent="pelis.menu_1"
+            action="pelis.actores_action_window"/>
   </data>
 </odoo>
