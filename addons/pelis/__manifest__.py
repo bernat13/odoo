@@ -27,6 +27,13 @@
         'views/views.xml',
         'views/templates.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'pelis/static/src/scss/pelis.scss',
+            'pelis/static/src/js/pelis.js',
+            ]
+            
+    },
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

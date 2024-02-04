@@ -7,12 +7,12 @@
       <field name="model">pelis.pelis</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="titulo"/>
+      
+          <field name="titulo" class="titulo"/>
           <field name="value"/>
           <field name="valoracion"/>
         </tree>
-     
+
       
       </field>
     </record>
@@ -23,15 +23,20 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group>
+            <img src="pelis/static/src/img/cartelera.jpeg" />
+            <group class="hola">
              <field name="titulo"/>
               <field name="name"/>
              
               <field name="value"/>
               <field name="valoracion"/>
             </group>
+            <group class="hola">
+              <field name="description"/> 
+            </group>
           </sheet>
         </form>
+        
       </field>
 
     </record>
