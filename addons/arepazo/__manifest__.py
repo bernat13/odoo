@@ -15,7 +15,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Administration',
+    'category': 'Administration','cocina'
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -39,4 +39,6 @@
     # 'demo': [
     #     'demo/demo.xml',
     # ],
+    # Icono de la aplicacion
+    'icon': "/arepazo/static/src/img/icon.png",
 }
