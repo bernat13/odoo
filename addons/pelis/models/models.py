@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class pelis(models.Model):
     _name = 'pelis.pelis'
-
+    id = fields.Integer()
     titulo = fields.Char()
     name = fields.Char()
     valoracion = fields.Integer()
@@ -25,7 +25,7 @@ class pelis(models.Model):
 
 class genero(models.Model):
     _name = 'pelis.genero'
-
+    id = fields.Integer()
     name = fields.Char()
     description = fields.Text()
     pelis_ids = fields.One2many('pelis.pelis', 'genero', string="Pelis")

@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+   
+
+    
+    <record model="ir.actions.act_window" id="arepazo.menu_action_window">
+      <field name="name">Menú</field>
+      <field name="res_model">arepazo.menu</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+      
+    <!-- <record model="ir.actions.act_window" id="arepazo.receta_action_window">
+      <field name="name">Recetas</field>
+      <field name="res_model">arepazo.receta</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record> -->
+
+      
+    <record model="ir.actions.act_window" id="arepazo.ingrediente_action_window">
+      <field name="name">Inbgredientes</field>
+      <field name="res_model">arepazo.ingrediente</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+        <!-- <record model="ir.actions.act_window" id="pelis.genero_action_window">
+      <field name="name">genero</field>
+      <field name="res_model">pelis.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+        <!-- <record model="ir.actions.act_window" id="pelis.actores_action_window">
+      <field name="name">Actores</field>
+      <field name="res_model">pelis.actores</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+    <!-- server action to the one above -->
+<!--     
+    <record model="ir.actions.server" id="pelis.action_server">
+      <field name="name">pelis server</field>
+      <field name="model_id" ref="model_pelis_pelis"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Arepazo" id="arepazo.menu_root"/>
+   
+    <!-- menu categories -->
+    
+    <menuitem name="Menu" id="arepazo.menu_1" parent="arepazo.menu_root"/>
+   
+    <!-- actions -->
+    
+    <menuitem name="Menu" id="arepazo.menu_menu_1_list" parent="arepazo.menu_1"
+              action="arepazo.menu_action_window"/>
+    <!-- <menuitem name="Recetas" id="arepazo.receta_menu_1_list" parent="arepazo.menu_1"
+              action="arepazo.receta_action_window"/> -->
+      <menuitem name="Ingredientes" id="arepazo.ingredientes_menu_1_list" parent="arepazo.menu_1"
+              action="arepazo.ingrediente_action_window"/>
+
+      <!-- <menuitem name="Generos" id="pelis.genero_menu_1_list" parent="pelis.menu_1"
+            action="pelis.genero_action_window"/>
+                 <menuitem name="Actores" id="pelis.actores_menu_1_list" parent="pelis.menu_1"
+            action="pelis.actores_action_window"/> -->
+  </data>
+</odoo>

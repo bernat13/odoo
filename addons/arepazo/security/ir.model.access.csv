@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_arepazo_menu,arepazo.menu,model_arepazo_menu,,1,1,1,1
+access_arepazo_ingrediente,arepazo.ingrediente,model_arepazo_ingrediente,,1,1,1,1
+
